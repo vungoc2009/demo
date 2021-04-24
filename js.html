@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.0.0-beta2-dist/bootstrap-5.0.0-beta2-dist/css/bootstrap.rtl.min.css">
+</head>
+<style>
+    .a{
+        color: aqua;
+    }
+</style>
+<body>
+   
+    <div>
+        <p>Giờ hiện tại</p>
+        <p id="clock"></p>
+    </div>
+   <div style="display: flex;">
+        <div>
+            <input placeholder="Công việc" id = "cv">
+        </div>
+        <div>
+            <select id="stt">
+                <option value="đang làm">đang làm</option>
+                <option value="đã làm">đã làm</option>
+                <option value="chưa làm">chưa làm</option>   
+            </select>
+        </div>
+      <div>
+          <button onclick="them()">Thêm</button>
+      </div>
+   </div>
+   <div>
+       <table style="width :100%;" >
+           <thead>
+               <th>Giờ</th>
+               <th>Công việc</th>
+               <th>trạng thái</th>
+           </thead>
+           <tbody id= "add">
+
+           </tbody>
+       </table>
+       
+   </div>
+    <script>
+        debugger
+        var full ="";
+        function them(){
+            var t = new Date();
+            var h = t.getHours();  
+            var m = t.getMinutes() +1 ;  
+            var s = t.getSeconds(); 
+            if (t.getMinutes() === 59){
+                m == 00;
+                if(t.getHours() === 23){
+                    hr == 00;
+                }else {
+                    h +=1;
+                }
+            }
+            h = h < 10 ? "0" + h :h;
+            m = m <10 ? "0" + m  :m ;
+            s = s <10 ? "0" + s :s;
+            var time = h + ":" + m + ":" + s;;
+            var cv = document.getElementById("cv").value;
+            var stt = document.getElementById("stt").value;
+            if(stt =="đang làm"){
+               cv = "<h1 style='color: yellow'> "+cv +"</h1>";
+             }else if(stt == "đã làm"){
+                cv = "<h1 style='color: aqua'> "+cv +"</h1>";
+            }else {
+                cv = "<h1 style='color: red'> "+cv +"</h1>";
+            }
+            full += "<tr class='all'><td class ='time'>" + time + "</td><td>"+ cv + "</td><td class = 'stt' >" + stt + "</td></tr>" ;
+            document.getElementById("add").innerHTML=full;
+        }
+        setInterval("clock()",1000);
+        function clock(){
+            var t = new Date();
+            var h = t.getHours();  
+            var m = t.getMinutes() ;  
+            var s = t.getSeconds(); 
+            if (t.getMinutes() === 59){
+                m == 00;
+                if(t.getHours() === 23){
+                    hr == 00;
+                }else {
+                    h +=1;
+                }
+            }
+           h = h < 10 ? "0" + h :h;
+           m = m <10 ? "0" + m  :m ;
+           s = s <10 ? "0" + s :s;
+
+            document.getElementById("clock").innerHTML = h + ":" + m + ":" + s;
+        }
+        function check() {
+          
+           var row = document.querySelectorAll(".all");
+           var time = new Date();
+           for ( var i =0 ; i< row.length ; i++){
+            var a = row[i].querySelector(".time").innerHTML;
+            var b = a.split(":");
+            if(b[0] < time.getHours()){
+                row[i].classlist.add("a");
+                var c = row[i].querySelector(".stt").innerHTML="đã làm";
+            }else if (b[0] == time.getHours()){
+                if (b[1] < time.getMinutes()){
+                    row[i].classlist.add("a");
+                    var c = row[i].querySelector(".stt").innerHTML="đã làm";
+                }else if (b[1] == time.getMinutes()){
+                    if(b[2] < time.getSeconds()){
+                        row[i].classlist.add("a");
+                        var c = row[i].querySelector(".stt").innerHTML="đã làm";
+                    }
+                }
+            }
+           }
+        }
+        setInterval(check(), 1000);
+
+    </script>
+</body>
+</html>
