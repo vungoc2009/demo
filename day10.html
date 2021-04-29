@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex;">
+        <div>
+            <p>Number</p>
+            <input type="number" id ="num">
+        </div>
+        <div>
+            <p>Current</p>
+            <input type="number" id ="cur">
+        </div>
+        <div>
+            <p>New</p>
+            <input type="number" id ="new">
+        </div>
+    </div>
+    <button id="sum" onclick="sum()">Sum</button>
+    <button id="find" onclick="find()">Find</button>
+    <button id="reverse" onclick="reverse()">Reverse</button>
+    <button id="swap" onclick="swap()">Swap</button>
+    <button id="all" onclick="clickAll()">All</button>
+    <button id="clear" onclick="clickClear()">Clear</button>
+    <p id="Sum" class="result"></p>
+    <p id="Find" class="result"></p>
+    <p id="Reverse" class="result"></p>
+    <p id="Swap" class="result"></p>
+    <script>
+        var arr=[];
+        var num = document.getElementById("num");
+        var cur = document.getElementById("cur");
+        var newN = document.getElementById("new");
+        
+        function addarr(num){
+            for(var i=0 ; i<=num;i++){
+                arr.push(i);
+            }
+            return arr;
+        }
+        function sum() {
+            addarr(num.value);
+            console.log(arr)
+            var sum=0;
+            for(var i =0  ;i<= num.value ; i++){
+                sum+=i;
+            }
+            document.getElementById("Sum").innerHTML=sum;
+        }
+        function find() {
+            var Cur = parseInt(cur.value);
+            var index = arr.indexOf(Cur);
+            document.getElementById("Find").innerHTML=index;
+        }
+        function reverse() {
+            arr.reverse();
+            document.getElementById("Reverse").innerHTML=arr;
+        }
+        function swap() {
+            var Cur = parseInt(cur.value);
+            var Swap = parseInt(newN.value);
+            var SwapNum = Swap;
+            var index = arr.indexOf(Cur);
+            var index1 = arr.indexOf(Swap);
+            arr.slice(index , 1 ,Swap);
+            arr.slice(index1 ,1 , Cur);
+            document.getElementById("Swap").innerHTML=arr;
+        }
+        function clickAll() {
+            sum();
+            find();
+            reverse();
+            swap();
+        }
+        function clickClear() {
+            num.value ="";
+            cur.value ="";
+            newN.value ="";
+            var list = document.getElementsByClassName("result");
+            for(var i =0 ;i<list.length;i++){
+                list[i].innerText = "";
+            }
+        }
+    </script>
+</body>
+</html>

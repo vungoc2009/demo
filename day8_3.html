@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./bootstrap-5.0.0-beta2-dist/bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css">
+    <link href="./bootstrap-5.0.0-beta2-dist/bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+    
+            .img-icon {
+                width: 60px;
+                height: 60px;
+            }
+    
+            .nav-item {
+                font-weight: bold;
+            }
+    
+            .nav-item:hover {
+                border-bottom: 3px solid #5BC0EB;
+            }
+    
+            .nav-link:hover {
+                color: rgb(24, 0, 238) !important;
+            }
+    
+            .img-slide {
+                width: 100%;
+                height: 500px;
+                object-fit: cover;
+            }
+    
+            .carousel-caption {
+                text-align: left;
+                height: 60%;
+                width: 25%;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                color: rgb(255, 255, 255);
+            }
+        </style>
+        <!--  first div -->
+        <div class="container justify-content-evenly mb-4">
+    
+            <!-- contact -->
+            <div class="row">
+    
+                <div class="col-xl-2 col-6 d-flex justify-content-center align-items-center mt-4">
+                    <img src="https://png.pngtree.com/png-vector/20201028/ourmid/pngtree-phone-icon-in-solid-circle-png-image_2380227.jpg" alt="" class="img-icon rounded-circle">
+                    <div>
+                        <p class="font-weight-light text-primary mt-2 mb-0">Call Us Today
+                        </p>
+    
+                        <p class="font-weight-bold">
+                            033.66.22.99.00
+                        </p>
+                    </div>
+    
+                </div>
+                <div class="col-xl-2 col-6 d-flex justify-content-center align-items-center mt-4 ">
+                    <img src="https://png.pngtree.com/png-vector/20201028/ourmid/pngtree-phone-icon-in-solid-circle-png-image_2380227.jpg" alt="" class="img-icon rounded-circle">
+                    <div>
+                        <p class="font-weight-light text-primary mt-2 mb-0">
+                            Email
+                        </p>
+    
+                        <p class="font-weight-bold">
+                            example@gmail.com
+                        </p>
+                    </div>
+    
+                </div>
+                <div class="col-xl-4 d-xl-flex justify-content-center align-items-end mt-4 d-none">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBIIFBUUFRQUGBUZGxkaGxkZGBMhGRoaGxgaGhkYHR0bIS8kGx8qHxgZJjcmKi4xQjQ0GiM6PzozPi0zNDMBCwsLEA8QHRISHTMqJCozMzMzMzMzMzMzMzUzMzUzMzM1MzMzMz4zPDEzMzMzMzMzMzMzMzUzMzMzMzMzMzMzM//AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABwEDBQYIBAL/xAA+EAACAQIDBQUFBwMEAQUAAAABAgADEQQFEgYhMUFRByJhcYETMkKRoRQVUmJygpIjosEWJEOx4TNTg7LC/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAIDBAEF/8QAKREAAgIBBAEEAQQDAAAAAAAAAAECEQMEEiExQRMiMlGBQnGRsRQjYf/aAAwDAQACEQMRAD8AmaIiAIiIAiIgCUny7BASSABvJPAAcTI72n7VMLlt0woGIqDdqBtRU/qHv/t3fmE6k30cbokUm3GannPaHluUXBre1cfBRGs36Fh3FPgWEhDPtq8btAT7esxQ/wDGl1pjw0D3vNrnxmE4Sax/ZFz+iU8z7Y6r3GGwyKOTVWZj/BLAfyM1fHdoma4y/wDuig/DTSmo+di31mqRJqCObmZGvnuMxPv4vEt51qtvlqtPE9Z6nvMzebE/9y3E7Ryz7SoycGI8iR/1PZRznF4f3MViV/TWqj/pp4IihZtGD2/zXB2ti3YDlUWm4PmWXV9ZsuWdsOKpbsRh6VQdaZdG+TagT8pGUTmxHdzOgsm7TMtzOytUagx+GsNI/mCU+ZE3GlUWqAysGU7wQQQR1BHGcmTJ5LtBi8ibVh6zoOJUG6N+pD3T52v4yLx/QUzqSVkWbM9rNLE2TGIKTcPapqNMn8y72T+4eUkzDYhMWi1EdXRhdWVgVI6gjcRK2muyadl+IicOiIiAIiIAiIgCIiAIiIBSYLaXafDbNU9dZ+8b6Ka2LuR+EdOrGwF+MxO3e3NLZhNCaXxTC6pyQHg724DovE+AuRAmZ5jWzao1as7PUbix6clA4Ko5AcJOEL5ZGUqM7tZtti9piVdvZ0OVFT3fAu24ufPdu3ATWYiaEkituxERFHBERFARERQEREUBERFARERQEzezO1WK2ZfVRfuE3ek2+m3W4+FvzLY7hxG6YSIas7Z0fshtnhdqFsh0VwLvRYjUOrKfjW/MeFwLzaJyXh8Q+FdXR2V0OpWUkMpHMGTh2e9oS55pw+JKpieCsNyVrdB8L9V58R0FE8dconGVkixESsmIiIAiIgCIiAUml9oO2ibL09CaWxVQdxTvCLw9o46XBsOZHQG2Y2t2hp7NYZq77291EvYu5B0r4DcSTyAM5szPMaubVXr1W11HN2PLwUDkoFgByAlmOG7lkJSotYnEvi3eo7szsSzMxuWJ4ky1KRNNFVlYlInaBWJSIoFYlIigViUiKBWJSfSgsQACSSAABckngAOZnKBSJvmzvZbjs0AesVw1M7++C1Uj9AI0/uII6Tfsv7J8tww/qCtWPMvUZR6Cnpt8zIPJFE1BsgWJ0mmweVKLfY6PqGJ+ZN548X2Z5Tib2w5QnmlSqtvJdWn6SPrIbGc8RJYzvsdZAWweI1fkrAAnydBb0K+sjPNcqxGTuaeIpNTfow3EdVYd1x4gmTjJS6OOLR45VWKEEEggggg2II3ggjgZ8xJURJ07NNu/voDC4hh9pUd1j/zKBv8A3gC5HMC452kack0Kz4Z1qIxV0IZWU2KsDcEHredFdn+1i7UYe7WGIp2Wqo5nlUUfhax8iCOVznyY65RbGVm2xESomIiIAluowQEkgAbyTwAHEmfcjntg2i+7sMMLTNqmIBDW4rSG5v5E6fLV0nYxt0cbojPb/aY7T4pnUn2FO60Rv4btTnxYi/kFHKavKxNqVKihuykSsTpwpErEApErEApErEApErKHdAPXluXVc1qJRooXqObKo+pJ4BQN5J4SfNidg8PswodrVcUR3qhG5bjetMH3R48T4DcLHZlsiNnqAq1F/wB1VAL3400O9aY6ci3ju36RN6mXJkvhF0Y0Immba7e4fZj+mo9riSL+zDWCg8Gdt+nqF4nwBvIdznbbMs7az4ioisbCnRLIu/4bKdT/ALiZyOKUuTrkkdJ6gOYn1OWhs5j6/f8AseMa+/V9nrm/jcrvn3Qx+YbOMoV8Vhm5I3tEBt+R+6w8wZL0fpnN3/DqKY7Ocnw+d0zSr01dD14qeqnip8RIx2T7WCzLSx6rY7hXQWt+tBy/MvDpzkt0qi1lDKQVYAgggggi4II4iVuLi+SSaZzntzsXV2UcG5fDuSEqW3g8dFS24NbnwaxItvA1WdWZtl1LNqT0KqhqbizA/Qg8mBsQeRAnNW02R1NnsTUw9TfpN0a3vofcf1G49CCOU0Ysm7h9lc41yYiZfZfPamzmJp4invA7rr+OmSNS+e646EAzExLGrIJ0dYYHF08fTSrTYMjqGU9VIuPKemRF2LbRe/gKh4aqlG/S96iD1OsebSXZjlHa6L07RWIiROnyTp8pzHtjnZ2gxlave6FtFPwprcL897ebGTh2mZv905dWKmz1LUU63e4a3iEDn0nOlrTTgj+orm/BWIiaCoREQBERAEREAREQBNs7M8kGd4+mGF6dH+sw5HSR7NfVyptzCmanJk7DcEFo4qvzaotP0ppq3etX6CV5XUWTgrZKc1PtC2o/0vhdSWNeoSlIHkbd5yOYUEeZKjnNtnPfazmhx+Yul+5QVaajlewdz53a37BMuOO6RZJ0jD7N5Bidr8SUViST7SrWa50hjvZvxMTew5noASJ82b2TwezagUaY1271VrGo3W7ch+UWHhPB2aZGuS4Cl3bVKwFVyRvu4BVT0sukW636zbhJZJtul0IxorPNjcFSx6GnVpo6HirqCp9DPTEqJEG9ofZ39zK2KwgY0B/6lMklqQ/GpO9k633rx3i+m/2SbXNhKi4Cq16Tk+xJPuPx9n+lt9hyb9W6ZqiCoCpAIIIIIuCDuII5icz7VZW2zWOq0aZKim4ek3MKbPTN+ZW4F+qy+D3pxZBqnaOnJGvbRkgxeFTFKO/QYBjzNNyFPnZtB8AWm9ZFmAzbDUK43e0po5HQsoJHobj0lM/wIzLDV6J/5Kbp6spAPobGUxdSJNWjlmJ8qdQBn1N9Gc9WU5i+U1qeIT36bhgOtveU+DLdT4GdS4HFpj6dOqhulRVdT1VgCPoZyhJz7Gs2+24NqBN2w7kDr7Opd1/u9oPJRKM8eLLcb8EixKRMxYQ324Zjrq4bDA7lVqrDxY6E+QR/5SLZtfabizjMzxJvuQpTXyVF1D+Rearab8Uagiib5KRK2i0mRKRK2i0ApEraLQCkStotAKRK2i0ApJ/7JcvqZflya10mo7VVB46GChSelwoPkRIy7N9lP9R4jXUX/bUSC9+DtxWl68W8N3xCdBgWmbPP9JbCPkrOX9s7nHY2/H29b/7tb6WnUE547U8sOX5lWNu5WC1V6d4aXHnrRj6iQ079x2fR0FhraFtw0rbytul2av2eZyM6wFFr3emopVOutABc/qXS37ptEqkqdE0ViInAUkD9s4H3ituPsKd/PXV/xaTuxA3mc0bZ5r9/46vWS7IzBKYHNUARbfqILfvl2BXKyE3wTd2ZknK8Jf8AA3y9o9vpabVMZs7l/wB04XD0Da9OmikjgWCjUfVrmXs5xgy7D1qxNhTpu/8AFSf8Sp8yZJdHKoAHDhy8uUrKKukAeE+rT0TOUm+djuY/Y8w9mT3a6Otvzp31P8Vces0S0ymzGLOAxuFqXtprU7/pLBX/ALWaRnG4tEoumdRRKRPPLzlzaGr9oxeKf8VesfQ1Gt9LTwWk8Z/2Y4HNSz09WHqm5um9CTzamTb+JWRrn3Z5mGT3YU/b0x8dG7G3jT94egIHWboZYPgolBo1G0Wn1a1xzG4joRxBlLS6iBS0WlbRaKBS0WlbRaKBS0WlbRaKBS09WVZbVzetToUl1O5sOg5lm6KACT5TzEWk49luyn3NR+01VtiKwFgRvp0zYhfBm3Mf2jlK8k9kSUFbNr2dyals/h6eHpe6o3seLMd7M3iT8tw5TLSkTz27NAml9pOyx2jwwamL4ijdkG7vqba6d/EAEeKjhczdInYyado41ZzbsftPV2UrllUsjWWrSO4sFJ3i/uupJtfqQeO6fMiz7C7QU9dCoHHxLwdT0ZTvH/R5XE1jbfs7p58Wr0CtLEH3rjuVD+e29W/MAfEHdaIsxyXHbOPqqU61Fl4VE1Bf21E3el7+E0tQy8rhkLcf2Ompaq1VoqWZgqgXLEgADqSdwnOlHbfM6S6VxtW35vZsf5OpJ+c8GIx+N2hbQ1TEYluIQGo+/qEW4HoJH/Gflj1F4N97Q+0JMcj4TBsSjXWrWFwGXgUp9QeBbmOFwbzH9lOyjZpXXF1V/oUWulxueqOFuqqd5P4go5GenZXstrYtlqYz+lT4+yUj2j+DEbkHkSf08ZMWFwyYNFp01VUUAKqgBVA4ACJSjGO2B1Jt2y/I97Yc5GBwgw6nv4hgCOYpoQzn1OlfJj0m9Y3GU8BTerUYKiAszHgAOM5w2tz19pMU9drhPdpofgRfdHmblj4seQEjhhulf0JypGEtFpW0Wm6igpafLXUEjiN48+U+7QVvFCzon/UwiQn99v1MrM/olm86UiImMuMFnmymCz7fWoqX/Gt1qD962JHgbjwkcZ72TVqF2wlUVF/BUsr+jgaWPmFkxxJxySj0yLimcuZjltfKn0V6T035B1te3EqeDDxBM8tp1Li8JTxyFKiI6HirqrKfQ7poeedlmExd2wztQf8ADvemfQnUvo1h0mmGoT+XBXLG/BC1otNjzvYvH5Lc1KJZB/yUrstupsNS+bATXrjjymhST5RU7XZ82i02DKNj8wzcBqeHcIfjeyJbqNdiw8VBmxUeybHPbXVwy9bGqxA5n3ACfCReSC7Z1Rk/B5uzDZT76rfaKi/7eiwIB4PUFiq+KruY/tG8EydJ4Moyylk9GnQpCyIth1J4lj1JJJJ6me+YMk98rNEY0isREgSEREAShF5WIBjquS4SqdTYagx6mlTJ+ZE9dCgmHFkVVHRQAPkJZxmY0MBb2tWlTve2t0W9uNtRF+MxWM20y3CAlsXRNuSNrb+KXM7Un0ctI2CeTH4+llyNVquqU1FyzGw/8noBxkfZ12sUaQK4Wi9RuT1O4g8dPvN5HT5yM88z7E5++vEVC1vdQbkX9KDcPPeepl0MEn3wVyyJdGc2821faVvZ09SYVDcKdzVGHB36Acl5cTvtbTrT7tFptjFRVIpcm3bPi0Wn3aLTpw+LShEuWny43HyigZH7pfoYkz/6W8B8pWUeqWbDdIiJhNAiIgCIiAUmIq7OYKpWFc4aiaoN9egXv+IjgzC25jvHKZiUi2ugebGV2wyF1pvUIF9CaNTeWplH1kd5j2qNgnKHL6ikcVq1ND+enQ3/AHJNnizLK6GaLorUqdRejqDbxB4qfEScXFfJWRab6ZpWW9quExBArU6tG/xbnQeq97+2bvgcbSzBBUpVEdDwZWBHiLjmOnKR1tB2WIQXwblTx9lUJKnwV/eX92rzE0bJs3xWyWIbSGUq2mrRa4V7cmHI24MOo4g2N3pQmrg/wV75RfuOiYmPybNKWc0Ur0zdHF7Hip4FT0INwfKZAzM1XBcuSsRPHmGYUstptVquqIOLMd3gB1J5AcYB65oW1/aHSyjVSw+mrXFwTe9OmfzEe8w/CPUjhNS2u7Qa2baqWG1UqG8FuFSoPEj3F8BvPM8RNEC2mvFp/Mv4KJ5fCL2Y46rmjtVrVGd24s3TkAOCr4Cwnm0y5pjTNdFG4t2i0uaY0zpyy3aLS5pjTAst2i0uaY0wLLdp78iwn27FYena+urTU/pLjV/beeTTNw7Lcv8AteYI/wANFHc9LkaFH95P7ZCb2xbJR5aROkRKzyzZRr+2dbEYTCVK2HbTUpWqcAQVU99SCN40lj+0TUsk7Ukey4ukVP46VyvmUPeX0LSSKtMVVKkAgggg8CCLETnfPsrbJsTVoG9kY6Seanejeqket5owQhO4yRTllKLTRPmWZrh82XXRqpUXnpO8eDDip8CBMhOZsPVfDMHpu6OODIzKw8ipuJumS9pGLwNlrKK6dTZXA/UBZvUeslPStfFnI6hPsmWJrWS7a4HN7KtT2dQ/BUsrX6A30sfImbLM0otOmi9ST6KxETh0REQCkjntZyJa9JcYgs9MqrkfEjGyk9SrEejHoJI0wG3Fvu/FX4ezb58vraTxycZJohkVxZovY/mZp1a2FJ7rr7RR0dbK3zBX+ElmQX2bhhmVC3C1TV5eyf8A/WmSR2h5xWyXCB6LaXd1p6rXKgqzErfdfu878ZbnheSl5K8Uqhb8F7anbDD7OrpJ11iLrSU7/AsfhXz3nkDIZz7PcTtA+us97e6i3CIPyr18TcnrPDUdqrFmLMzG5ZiSxJ4kk7yZ8WmrFgjH9yjJmcv2LemNMuWi0uoqst6Y0y5aLRQst6Y0y5aLRQst6Y0y5aLRQst6Y0y5aLRQst6ZL3ZFlnsMPVxBG+q+lf0U7i/8y/yEirC4VsW6U0F2dlVR+ZjYek6MyrAJllGnRX3UUKPGw3k+JNz6zLqpUtv2aMCt39HsiViYKNZSR32rZH9oRMWg71PuvbmhPdb9rE+jHpJElnEUVxKMjqGVgVYHgQRYg+YMnCe2SZCcd0WjmzTGmZrabJHyHEPSNynvIx+JDw9RwPiPETE6Z6yaatHlu06ZbK3mcyXarGZKV0VWamLXpt3lI5gX3r+0iYfTGmHFSVM6ptO0dIUKq11V1N1YAg9QRcH5GfNDEJXBKMrAEqSCDZgbFTbgQeI5TSezHPhiqX2Vz/UpDuX+Kn0HipNvLT4yztrs5iMLUbHYI1Fc76q0yQWt8YA97xXffjbjPM9OpOLdHo+pcVJKyQ4kUZN2l1qFlxKLVX8aWV/Mr7remmbPT7RcvYXLVVP4TTe/9tx9Ylgmn0I54PybhI67VM7WlTXBobu5DVLfCim6qehZgD5KeonnzvtM1LpwtNgTu9pUA3eKoCbnzPoZp2U5Ridp65C6mZjqqVHuQt+LMevReflwuxYXF7p8UU5MyktsebNo7JMsL1auJI7qL7NT1ZrM3yUL/OX+1/HBvs+HB3jVUYdPhT5/1PlN4wWGobM4ULfTSpKSzHiebMbcSTyHUAcpCWf5o+d4ipXbdqPdX8KDci+duPiTJY/9mRy8IjkezGo+WYrTGmXNMaZsoybi3pjTLmmNMUNxb0xplzTGmKG4t6Y0y5pjTFDcW9MaZc0xpihuLemNMuaZ68qy181qpRpjvsbX5KPic+AFz6Q+OWdTb4RuXZVkftqrYtx3UuiX5uR32Hkpt+49JLE8WVZemVUadGmLIi2HUniWPiSST4me2eTknulZ6eOG2NFYiJAsEREA17bDZ5doKBUWFVLtTY8m5qfytax9DykI16D4dmR1KupKsp4gjiDOjppO3eyf3qpr0R/XUb1/9xRy/UOR58OltOnzbXT6Mmpw7lceyI7RaXGQqSCCCNxB4gjiD0MWnpnnWfWFrvg3WojFHU3VhxB/z0tzBIku7K7a0c3C06pWnX3DSTZXPVCev4Tv8+MiC0FbynLhjNFuLM4MmnO9i8HnBLshp1DvL0yFJPVhYqx8SL+M1l+y037uL3fmo3PzDi/yE1jLNrMdlgCpWLIPgcB18rnvAeAImcTtKxYG+jQJ6jWPpqMzrHmhxFmh5cMuZKjM5f2Z4aiQa1WpV/KoCKfOxLfJhNoqVMJs3R3+zo0l4AAC58AN7MfUmRpjO0HH1xZfZU/FVu3zckfSaxjMXVxz66ju79XYk+QvwHgI9DJN+9j/ACMcF7EZza/aypn7aEBXDqbhT7zEcGa30Xl4nhrFpctFprjBRVIyTyOTtlu0Wly0WkyO4t2i0uWi0DcW7RaXLRaBuLdotLlotA3Fu0Wly0Wgbj4C3kw7A7NfctP2tQf16gF/yLxCefM+NhymI2C2RNMri8QO9xpIeXSow69By48bWkcTztTmv2x/Jv02Fr3S/BWIiZDaIiIAiIgCIiAaRtlsaMzvXoALX4su4LU/wG8efPqItq0WosUZSrKbFSLEEcQQeE6Imu7SbLUc9Go9yqB3agG/wDD4h9RyM1YNTt9sujFqNLu5j2QvpjTMrm+S18nfRVS1/dcXKN+lv8Gx8Jj9M9JNNWjzJXF0y1pjTLumNM7RHcWtMaZd0xpihuLWmNMu6Y0xQ3FrTGmXdMaYobi1pjTLumNMUNxa0xpl3TGmKG4taY0y7pnqy/LauZMEpIWbw4KOrHgo8TOOlyzqbbpHgC3ki7G7E+zK4jFL3uKUjy6M469F5c9+4ZnZjY2llFqlS1Sv1t3U/QDz/Md/S02yefn1N+2P8np6fS17pfwJWImM3CIiAIiIAiIgCIiAIiIB58VhUxalHRWU8QwBB+c0TOuz/i+Fb/43J+Stx9D85IUSePLKD9rKsmGGRe5ED4zA1cA2iqjI3Rhx8QeDDxE8+mTzicNTxSlXRXU8QwBHyM1fMdg8NiLmkWpHoO8v8W3/ACIm7HrE/kqPNy6CS5i7/si7TGmbbjNhcXQ3poqD8raW+TWH1mFxOTYnC+9Qqr46WI+Y3TVHLCXTRiniyR7izGaY0y6RaLSwqstaY0y7aLCBZa0xpmQw+V18T7lGo3iEe3ztaZnB7E43Ee8qUx1Zhf5Jf62kJZIR7aLYY8kvjFs1bTLmHwzYlgqIzMeCqCT8hJHy/YCjRsartU/KO6v0u31E2rB4GlgF000VF6KAL+J6nxMy5NZFfHk2Y9BN/N1/ZoGS7AVK1mxLaF/AhBY+Bbgvpf0m/Zdl9LLUCUkCqOQ5nqSd5PiZ64mHJllPtno4sEMfS/J9RESsvEREAREQBERAEREAREQBERAEREASkRAE+TETqIyMLnvCRxmnvGInpabo8bWHny/3hJF2e5RElqOiGk7NjE+4ieWz24CIiRRMREToKxEQBERAEREAREQD/9k="
+                        alt="" class="img-icon">
+                    <p class="font-weight-bold text-info h1 ">Steam</p>
+    
+                </div>
+                <div class="col-xl-2 col-6 d-flex justify-content-center align-items-center mt-4">
+                    <img src="https://png.pngtree.com/png-vector/20201028/ourmid/pngtree-phone-icon-in-solid-circle-png-image_2380227.jpg" alt="" class="img-icon rounded-circle">
+                    <div>
+                        <p class="font-weight-light text-primary mt-2 mb-0">
+                            Work Time
+                        </p>
+    
+                        <p class="font-weight-bold">
+                            033.66.22.99
+                        </p>
+                    </div>
+    
+                </div>
+                <div class="col-xl-2 col-6 d-flex justify-content-center align-items-center mt-4">
+                    <img src="https://png.pngtree.com/png-vector/20201028/ourmid/pngtree-phone-icon-in-solid-circle-png-image_2380227.jpg" alt="" class="img-icon rounded-circle">
+                    <div>
+                        <p class="font-weight-light text-primary mt-2 mb-0">
+                            Address
+                        </p>
+    
+                        <p class="font-weight-bold">
+                            033.66.22.99
+                        </p>
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+            <!-- line between -->
+            <hr>
+            <!-- .... -->
+            <div class="d-flex justify-content-between mt-2">
+    
+                <!-- div left -->
+    
+                <div>
+    
+                    <nav class="navbar navbar-expand-lg navbar-light ">
+    
+    
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Home </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Quotes</a>
+                                </li>
+    
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Portfolio
+                              </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+    
+    
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Shop</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Blog</a>
+                                </li>
+    
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Contact
+                              </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+    
+                            </ul>
+    
+                        </div>
+    
+    
+                    </nav>
+    
+    
+                </div>
+    
+                <!-- div button right -->
+    
+                <div>
+                    <button type="button" class="btn btn-primary rounded-pill px-4">Request a Quote</button>
+                </div>
+    
+    
+    
+            </div>
+    
+        </div>
+    
+        <!-- slide -->
+        <div class="row">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-caption">
+                            <h5 class="font-weight-bold">WORDS OF WISDOM</h5>
+                            <h1 class="font-weight-bold">We Have the Best Printing Services in the Market.</h1>
+                            <button class="btn btn-outline-light">READ MORE</button>
+                        </div>
+                        <img class="d-block img-slide" src="tây ban nha.png" alt="First slide">
+    
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-caption">
+                            <h5 class="font-weight-bold">WORDS OF WISDOM</h5>
+                            <h1 class="font-weight-bold">We Have the Best Printing Services in the Market.</h1>
+                            <button class="btn btn-outline-light">READ MORE</button>
+                        </div>
+                        <img class="d-block img-slide" src="anh.png" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-caption">
+                            <h5 class="font-weight-bold">WORDS OF WISDOM</h5>
+                            <h1 class="font-weight-bold">We Have the Best Printing Services in the Market.</h1>
+                            <button class="btn btn-outline-light">READ MORE</button>
+                        </div>
+                        <img class="d-block img-slide" src="logo.jpg" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only"></span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only"></span>
+                </a>
+            </div>
+        </div>
+    
+    
+    
+        <!-- information -->
+    
+    
+        <div class="container-fluid">
+    
+            <!--  row -->
+            <div class="row">
+    
+                <!-- first col -->
+    
+                <div class="col-4 p-4" style="background-color: rgb(170, 20, 170);">
+                    <p class="text-white font-weight-light mt-3 mb-0">We most with position</p>
+                    <p class="text-white font-weight-bold h2 ">Proprinting Services</p>
+                    <p class="text-white font-weight-normal mt-4 mb-4">Apparently we had reached a great height fr the sky won black, and the stars had ceased to twinkle.</p>
+                    <button type="button" class="btn btn-outline-light rounded-pill border-2 rounded-3 p-3 mb-4">READ MORE  → </button>
+                </div>
+    
+                <!-- second col -->
+    
+                <div class="col-4 bg-warning p-4">
+                    <p class="text-white font-weight-light mt-3 mb-0">We most with position</p>
+                    <p class="text-white font-weight-bold h2 ">Graphic Design</p>
+                    <p class="text-white font-weight-normal mt-4 mb-4">Apparently we had reached a great height fr the sky won black, and the stars had ceased to twinkle.</p>
+                    <button type="button" class="btn btn-outline-light rounded-pill border-2 rounded-3 p-3 mb-4">READ MORE  → </button>
+                </div>
+    
+    
+                <!-- third col  -->
+    
+                <div class="col-4 bg-danger p-4">
+                    <p class="text-white font-weight-light mt-3 mb-0">We most with position</p>
+                    <p class="text-white font-weight-bold h2 ">Copying Services</p>
+                    <p class="text-white font-weight-normal mt-4 mb-4">Apparently we had reached a great height fr the sky won black, and the stars had ceased to twinkle.</p>
+                    <button type="button" class="btn btn-outline-light rounded-pill border-2 rounded-3 p-3 mb-4">READ MORE  → </button>
+                </div>
+    
+    
+            </div>
+    
+    
+    
+        </div>
+    
+    
+        <div>
+            <div style="display: flex;">
+    
+                <div class="div-1" style="background-color: salmon; width: 50%; height: 300px;">
+    
+                </div>
+    
+                <div class="div-1" style="background-color: rgb(49, 160, 39); width: 50%; height: 300px;">
+    
+                </div>
+    
+                <div class="ba">
+    
+                    <div class="aha" style="background-color: seashell; height: 100px; width: 100px;">
+    
+    
+                    </div>
+                    <div class="aha" style="background-color: seashell; height: 100px; width: 100px; margin-top: 10px;">
+    
+    
+                    </div>
+                </div>
+    
+    
+    
+            </div>
+    
+    
+    
+        </div>
+    
+    
+    
+    
+    
+        <style>
+            .ba {
+                position: absolute;
+                left: 47%;
+                top: 110%;
+                display: block;
+            }
+        </style>
+    
+</body>
+</html>

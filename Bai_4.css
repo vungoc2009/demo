@@ -1,0 +1,17 @@
+.chung{
+    display: flex;
+}
+.khoi{
+    width: 15%;
+    height: 80px;
+    background-color: black;
+    margin-left: 10%;
+    margin-top: 5%;
+
+}
+.khoi1 {
+    margin-left: 5%;
+}
+.khoi2 {
+    margin-left: 10%;
+}

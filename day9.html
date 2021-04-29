@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="text" id ="firstname"> Họ
+   <input type="text" id = "lastname"> Tên 
+   <button id = "add" onclick="add_name()">add</button>
+   <table style="width : 100%" id = "infor">
+      <tr>
+        <th>firstName</th>
+        <th>lastName</th>
+      </tr>
+  </table>
+  <script>
+    var fullname = "";
+    
+    function add_name() {
+      var first = document.getElementById("firstname").value;
+      var last = document.getElementById("lastname").value;
+      fullname += "<tr><td>" + first + "</td> <td>" + last + "</td> </tr>";
+      document.getElementById("infor").innerHTML=fullname;
+      } 
+  </script>  
+  <select id= "main">
+
+  </select>
+  <script>
+   
+  var ten=1800;
+  
+  for(var i=1800; i<2022;i++){
+    ten +="<option>" +i+ "</option>";
+  }
+  document.getElementById("main").innerHTML=ten;
+
+    
+  </script>  
+  <button onclick="myfunction()">try it</button>
+  <p id ="demo"></p>
+  
+  <script>
+    var a = ["apple" , "orange", " banana"];
+    document.getElementById("demo").innerHTML=a;
+    function myfunction() {
+      a.sort();
+      a.reverse();
+      document.getElementById("demo").innerHTML=a;
+    }
+  </script>  -->
+ 
+   <!-- <style>
+      .pass{
+        color: red;
+      }
+      .fail{
+        color: wheat;
+      }
+    </style>
+    <div id = "main"></div>
+    <input id = "mark">
+    <button onclick="check()">check</button>
+   <script>
+     function check() {
+       var mark=document.getElementById("mark").value;
+       if(mark>4){
+         var color = '<h1 class="pass">Ngọc </h1>'
+       }else{
+        var color = '<h1 class="fail">Ngọc </h1>'
+       }
+       document.getElementById("main").innerHTML=color;
+     }
+   </script>  -->
+   <!-- add diem -->
+   <style>
+     .pass{
+       color: red;
+       
+     }
+     .fail {
+       color: aqua;
+       
+      }
+   </style>
+   
+   <input type="text" id = "ten">Tên
+   <input id="diem">Điểm
+   <button id ="add" onclick="my()">Thêm</button>
+   <table style="width : 100%" id = "infor">
+    <tr>
+      <th>Tên</th>
+      <th>Điểm</th>
+    </tr>
+</table>
+<script>
+  var fullname = "";
+  
+  function my() {
+    var first = document.getElementById("ten").value;
+    var diem = document.getElementById("diem").value;
+    if(diem >4){
+      var first = '<h1 class="pass">'+  first +'</h1>';
+    }else {
+      var first = '<h1 class="fail">' + first +'</h1>';
+    }
+    fullname += "<tr><td>" + first + "</td> <td>" + diem + "</td> </tr>";
+    document.getElementById("infor").innerHTML=fullname;
+    } 
+</script>  
+</body>
+</html>

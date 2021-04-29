@@ -1,0 +1,28 @@
+
+.chung {
+    display: flex;   
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.khoi1{
+    
+    background-color: red;
+    height: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 30%;
+    
+}
+.chung2{
+    display: flex;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.khoi2 {
+    background-color: red;
+    height: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width:calc((30% *2) + 20px) ;
+}

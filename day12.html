@@ -1,0 +1,106 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+    table,
+    td {
+        border: 1px solid black;
+        padding: 5px;
+    }
+</style>
+
+<body>
+    <div id="time"></div>
+    <input type="text" placeholder="Work to do" id="inputWork">
+
+    <select id="select">
+        <option value="Do Not">Do Not</option>
+        <option value="To Do">To Do</option>
+        <option value="Done">Done</option>
+
+    </select>
+    <button onclick="setToDo()">Add</button>
+
+    <div>Work</div>
+
+    <table>
+        <thead>
+
+            <th>Name</th>
+            <th>Time</th>
+            <th>Status</th>
+
+        </thead>
+
+        <tbody id="app">
+
+        </tbody>
+
+    </table>
+
+
+    <script>
+        window.onload = displayClock();
+
+        function displayClock() {
+            var display = new Date().toLocaleTimeString();
+            document.getElementById("time").innerHTML = display;
+            setInterval(displayClock, 1000);
+        }
+
+        setInterval(checkTime, 1000);
+
+        function checkTime() {
+            let date = new Date();
+            let currTime = date.getHours() * 60 + date.getMinutes();
+            let classDo = document.querySelectorAll(".todo");
+            let status = document.getElementsByClassName("status");
+            for (let i = 0; i < classDo.length; i++) {
+                let id = classDo[i].getAttribute('id');
+
+                if (parseInt(id) == currTime) {
+                    // classDo[i].setAttribute("style", "color: yellow;")
+                    status[i].innerHTML = "To Do"
+                    status[i].setAttribute("style", "color: yellow;")
+                }
+                if (parseInt(id) < currTime) {
+                    // classDo[i].setAttribute("style", "color: green;")
+                    status[i].innerHTML = "Done"
+                    status[i].setAttribute("style", "color: green;")
+                }
+            }
+        }
+
+        function setToDo() {
+            let date = new Date();
+            let h = date.getHours();
+            let m = date.getMinutes();
+            let s = date.getSeconds();
+            let timeWork = h * 60 + m + 1;
+            let mWork;
+            let hWork;
+            if (m == 59) {
+                hWork = h + 1;
+                mWork = "00";
+            } else {
+                hWork = h;
+                mWork = m + 1;
+            }
+            let inWork = document.getElementById("inputWork").value;
+            let status = document.getElementById("select").value;
+            document.getElementById("app").innerHTML += "<tr ><td>" + inWork + " </td><td  class='todo' id='" + timeWork + "' >" + hWork + ' : ' + mWork + ' : ' + s + "</td>" + "<td class='status' style='color:red' >  " + status + " </td></tr>"
+        }
+    </script>
+</body>
+
+</html> 

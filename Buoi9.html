@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div>
+        <p>Công việc</p>
+        <input id="First-name" type="text">
+        <p id="err"></p>
+    </div>
+    <select name="" id="select">
+        <option value="Đang làm">Đang làm</option>
+        <option value="Đã làm">Đã làm</option>
+    </select>
+    <button onclick="add()">Thêm</button>
+    <h4>Bảng dữ liệu:</h4>
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th scope="col">Công việc</th>
+                <th scope="col">Giờ</th>
+                <th scope="col">Trạng thái</th>
+            </tr>
+        </thead>
+        <tbody id="tb-add">
+        </tbody>
+    </table>
+
+    <style>
+        .green-bg {
+            background-color: green;
+            color: #fff;
+        }
+        
+        .red-bg {
+            background-color: red;
+            color: #fff;
+        }
+    </style>
+</body>
+
+<script>
+    var row = "";
+
+    function add() {
+        var first = document.getElementById("First-name").value;
+        var a = document.getElementById("tb-add");
+        var tt = document.getElementById("select").value;
+        var date = new Date();
+        var hour = date.getHours();
+        var minute = date.getMinutes() + 1;
+        var second = date.getSeconds();
+        if (date.getMinutes() === 59) {
+            minute = 00;
+            if (hour === 23) {
+                hour = 0;
+            } else {
+                hour += 1;
+            }
+        }
+        hour = hour < 10 ? "0" + hour : hour;
+        minute = minute < 10 ? "0" + minute : minute;
+        second = second < 10 ? "0" + second : second;
+        var curent = hour + ":" + minute + ":" + second;
+
+        if (tt == "Đang làm") {
+            row += "<tr class = 'abc green-bg'><td>" + first + "</td><td class = 'date'>" + curent + "</td><td class = 'option'>" + tt + "</td></tr>";
+            document.getElementById("tb-add").innerHTML = row;
+        } else {
+            row += "<tr class = 'abc red-bg'><td>" + first + "</td><td class = 'date'>" + curent + "</td><td  class = 'option'>" + tt + "</td></tr>";
+            document.getElementById("tb-add").innerHTML = row;
+        }
+    }
+
+    function checkDate() {
+        debugger
+        var rowList = document.querySelectorAll(".abc");
+        var crDate = new Date();
+        for (var i = 0; i < rowList.length; i++) {
+            var d = rowList[i].querySelector(".date").innerHTML;
+            var txt = d.split(":");
+            if (txt[0] < crDate.getHours()) {
+                rowList[i].classList.add("red-bg");
+                var op = rowList[i].querySelector(".option").innerHTML = "Đã làm";
+            } else if (txt[0] == crDate.getHours()) {
+                if (txt[1] < crDate.getMinutes()) {
+                    rowList[i].classList.add("red-bg");
+                    var op = rowList[i].querySelector(".option").innerHTML = "Đã làm";
+                } else if (txt[1] == crDate.getMinutes()) {
+                    if (txt[2] <= crDate.getSeconds()) {
+                        rowList[i].classList.add("red-bg");
+                        var op = rowList[i].querySelector(".option").innerHTML = "Đã làm";
+                    }
+                }
+            }
+        }
+    }
+
+    setInterval(checkDate, 1000)
+</script>
+
+</html>

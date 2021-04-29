@@ -1,0 +1,54 @@
+body {
+    background-color: #ccc;
+}
+
+.app {
+    display: flex;
+    width: 50%;
+}
+.ab {
+    background-color: #3e8ec4;
+    color: #fff;
+    width: 50%;
+    padding: 48px 36px;
+}
+
+.ab > .cd {
+    margin-left: 20%;
+}
+.app2 {
+    display: flex;
+   
+}
+.ab > .cd > .cd2 {
+    height: 50px;
+    width: 140px;
+    
+    margin-top: 12px;
+}
+
+button[name="cs"] {
+    border-radius: 10px;
+}
+.de{
+    width: 50%;
+    background-color: #fff;
+    padding: 48px 36px;
+}
+input[class="input"] {
+    width: 100px;
+    height: 20px;
+}
+.tach {
+    margin-left: 2px;
+}
+.mau{
+    background-color: #3e8ec4;
+    color: white;
+   
+    border: 2px solid;
+    width: 88px;
+    height: 32px;
+}
+
+    

@@ -1,0 +1,70 @@
+body {
+    background-color: #ccc;
+}
+.app {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    
+}
+.infomation {
+    background-color: #3e8ec4;
+    color: #fff;
+    width: 50%;
+    padding: 48px 36px;
+}
+.infomation_button-btn {
+    width: 140px;
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-top: 12px;
+}
+
+
+.register {
+    width: 50%;
+    background-color: #fff;
+    padding: 48px 36px;
+}
+.register__heading {
+    color: #5492be;
+}
+.input {
+    width: 100px;
+    height: 20px;
+}
+.input-email {
+    width: 94%;
+}
+.register__body-first-last {
+    display: flex;
+    
+}
+.register__body-email {
+    margin-top: 8px;
+    
+}
+.register__body-password-confirm {
+    display: flex;
+    margin-top: 8px;
+}
+.register__body-checkbox {
+    margin-top: 16px;
+    font-size: 14px;
+}
+.link-checkbox {
+    color: #3e8ec4;
+}
+.register__button {
+    margin-top: 16px;
+}
+.register__button-btn {
+    background-color: #3e8ec4;
+    color: white;
+    outline: none;
+    border: none;
+    width: 88px;
+    height: 32px;
+}

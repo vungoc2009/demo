@@ -1,0 +1,16 @@
+.box-item {
+    width: 30%;
+    height: 100px;
+    background-color: red;
+    margin: 10px 10px;
+    color: royalblue;
+}
+.box_row1{
+    display: flex;
+}
+.box_row2{
+    display: flex;
+}
+.box-item-special {
+    width: calc((30% *2) + 20px);
+}

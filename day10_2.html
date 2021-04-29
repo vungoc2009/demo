@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="display: flex;">
+        <div>
+            <p>Number</p>
+            <input type="number" name="" id="inputNumber" min="0" step="1" pattern="[0-999],{0,3}">
+        </div>
+        <div>
+            <p>Current</p>
+            <input type="number" name="" id="inputCurrent">
+        </div>
+        <div>
+            <p>New</p>
+            <input type="number" name="" id="inputNew">
+        </div>
+
+    </div>
+
+
+    <p></p>
+    <button id="btnSUM" onclick="clickSUM()">SUM</button>
+    <button id="btnFind" onclick="clickFind()">Find</button>
+    <button id="btnReverse" onclick="clickRever()">Reverse</button>
+    <button id="btnSwap" onclick="clickSwap()">Swap</button>
+    <button id="btnAll" onclick="clickAll()">All</button>
+    <button id="btnClear" onclick="clickClear()">Clear</button>
+
+    <p id="warning"></p>
+
+    <p> Result</p>
+    1.<span id="resultSUM" class="result"></span>
+    <p></p>
+    2.<span id="resultFind" class="result"></span>
+    <p></p>
+    3.<span id="resultReverse" class="result"></span>
+    <p></p>
+    4.<span id="resultSwap" class="result"></span>
+    <p></p>
+
+
+    <script>
+        var arr = [];
+        var num = document.getElementById("inputNumber");
+
+        var curr = document.getElementById("inputCurrent");
+
+        var newNum = document.getElementById("inputNew");
+
+
+
+
+        function clickSUM() {
+
+
+            addArr(num.value);
+
+
+            var result = 0;
+
+            for (i = 0; i <= num.value; i++) {
+                result += i;
+            }
+
+
+
+            document.getElementById("resultSUM").innerHTML = result;
+            document.getElementById("resultReverse").innerHTML = arr;
+
+
+           
+
+        }
+
+
+
+        function clickFind() {
+
+            var numCurr = parseInt(curr.value);
+            
+            var index = arr.indexOf(numCurr);
+
+            
+
+            document.getElementById("resultFind").innerHTML = arr.indexOf(numCurr);
+
+            
+        }
+
+        function clickRever() {
+            
+
+            arr.reverse();
+
+            document.getElementById("resultReverse").innerHTML = arr;
+        }
+
+
+
+        function clickSwap() {
+            
+            var numCurr = parseInt(curr.value);
+            var numNew = parseInt(newNum.value);
+
+            var swapNum = numNew;
+
+            var index1 = arr.indexOf(numCurr);
+           
+
+            var index2 = arr.indexOf(numNew);
+
+
+           
+
+            arr.splice(index1, 1, numNew);
+
+
+           
+            arr.splice(index2, 1, numCurr);
+
+            document.getElementById("resultSwap").innerHTML = arr;
+
+
+        }
+
+
+        function clickAll() {
+            clickSUM();
+            clickFind();
+            clickRever();
+            clickSwap();
+        }
+
+
+        function clickClear() {
+
+            curr.value = "";
+            num.value = "";
+            newNum.value = "";
+
+            var listResult = document.getElementsByClassName("result");
+
+            for (i = 0; i <= listResult.length; i++) {
+                listResult[i].innerText = "";
+            }
+
+
+        }
+
+
+        function addArr(num) {
+
+            for (i = 0; i <= num; i++) {
+                arr.push(i);
+            }
+
+            return arr;
+
+        }
+    </script>
+</body>
+
+</html>
